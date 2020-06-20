@@ -8,23 +8,20 @@ With this app, we are creating an informative platform that when you choose what
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-List of APIs
+List of APIs 
 YouTube 
 Inspirational Quotes 
 a api that have a database of workouts 
 
 
+
+TEAM Members
+Sidorela Kollcaku
+-Front end css
+Ricardo Manosalvas
+-js
+Don Tran
+-Api/js
 
 
 
