@@ -11,3 +11,20 @@ With this app, we are creating an informative platform that when you choose what
 
 
 
+
+
+
+
+
+
+
+
+List of APIs
+YouTube 
+Inspirational Quotes 
+a api that have a database of workouts 
+
+
+
+
+
