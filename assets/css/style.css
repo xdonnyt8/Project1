@@ -3,11 +3,36 @@ body {
   
 
 }
+
+.header {
+    margin: auto;
+    text-align: center;
+}
+
 .headerText{
     color: orangered;
 }
+
+#title {
+    background-color: lightgray;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+#quotes {
+    background-color: lightgray;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+
+
 .promtText{
-    color: orangered;
+    color: rgb(230, 98, 59);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-style: italic;
+    font:bold;
+  
 }
 
 .bg-images { 
