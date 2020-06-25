@@ -17,7 +17,7 @@ $.ajax({
 
 var endpoint = "";
 // var queryURL = "https://wger.de/api/v2/" + endpoint + "/" +  key;
-var queryURL = "https://wger.de/api/v2/" + "?217452dcb87aabe91d2071261915796cb41761c2007b3444879798f58c7";
+var queryURL = "https://wger.de/api/v2/exercise/?muscle=2&language=2" + "&007b3444879798f58c703a831e696dc56e7d9bda";
 
 
 $.ajax({
@@ -25,7 +25,8 @@ $.ajax({
   method: "GET"
 }).then(function (response) {
   console.log(response);
-  console.log(response.exerciseinfo)
+  console.log(response.results[0].description)
+
 
 });
 
@@ -37,7 +38,8 @@ fetch("https://type.fit/api/quotes")
   })
   .then(function (data) {
     console.log(data);
-    var quote = (data[0].text)
+    var randomNum = Math.floor(Math.random() * 1643)
+    var quote = (data[randomNum].text)
     var quoteDiv = $("#quotes")
     quoteDiv.text(quote);
   });
