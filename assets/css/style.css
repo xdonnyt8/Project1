@@ -28,7 +28,11 @@ body {
 
 
 .promtText{
-    color: orangered;
+    color: rgb(230, 98, 59);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-style: italic;
+    font:bold;
+  
 }
 
 .bg-images { 
