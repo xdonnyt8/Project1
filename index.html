@@ -6,13 +6,37 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./assets/css/bulma.css">
   <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css">
   <title>Fitness Guru</title>
 </head>
 
 <body>
 
-  <script type="text/javascript"
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDoNHm29IP6HZeVrcltuCkZ1AMzrhnNZTs&libraries=places"></script>
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://bulma.io">
+        <!-- <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28"> -->
+      </a>
+  
+      <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+  
+    <div id="navbarBasicExample" class="navbar-menu">
+      <div class="navbar-start">
+        <a class="navbar-item">
+          Home
+        </a>
+  
+        <a class="navbar-item">
+          Food Ideas
+        </a>
+      </div>
+    </div>
+  </nav>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="./assets/js/js.js"></script>
 
@@ -23,33 +47,34 @@
         <div><span id="quotes"></span></div>
       </div>
     </section>
-
-
     <section class="section mainBody">
       <div class="container">
         <h1 class="title has-text-centered promtText">What do you want to work on today?</h1>
         <div class="field columns is-centered">
           <div class="control">
             <div class="select is-success">
-              <select>
-                <option>Muscles:</option>
-                <option id="muscles biceps">Biceps</option>
-                <option id="muscles triceps">Triceps</option>
-                <option id="muscles pecs">Pecs</option>
-                <option id="muscles shoulders">Shoulders</option>
-                <option id="muscles back">Back</option>
-                <option id="muscles glutes">Glutes</option>
-                <option id="muscles quads">Quads</option>
-                <option id="muscles hamstrings">Hamstrings</option>
-                <option id="muscles calves">Calves</option>
+              <select id="selector">
+                <option value="0">Select the muscle</option>
+                <option value="1">Biceps</option>
+                <option value="5">Triceps</option>
+                <option value="4">Pecs</option>
+                <option value="2">Shoulders</option>
+                <option value="12">Back</option>
+                <option value="8">Glutes</option>
+                <option value="10">Quads</option>
+                <option value="11">Hamstrings</option>
+                <option value="7">Calves</option>
+                <option value="9">Traps</option>
               </select>
             </div>
           </div>
         </div>
       </div>
     </section>
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-
+    <section id="exercises">
+      <div id="display"></div>
+    </section>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
     <footer class="footer">
     <div class="content has-text-centered">
       <p>
