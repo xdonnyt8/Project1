@@ -54,7 +54,6 @@
         <div class="field columns is-centered">
           <div class="control">
             <div class="select is-success">
-
               <select id="selector">
                 <option value="0">Select the muscle</option>
                 <option value="1">Biceps</option>
@@ -67,15 +66,26 @@
                 <option value="11">Hamstrings</option>
                 <option value="7">Calves</option>
                 <option value="9">Traps</option>
-
               </select>
             </div>
           </div>
+            
         </div>
+        <section id="exercises">
+          <div class="card hide" id="card">
+            <div class="card-content">
+              <div class="media">
+                <div class="content">
+                  <p class="title is-4" id="exerciseName"></p>
+                </div>
+              </div>
+              <div class="content" id="exerciseDescription">
+                <br>
+              </div>
+            </div>
+          </div>
+        </section>    
       </div>
-    </section>
-    <section id="exercises">
-      <div id="display"></div>
     </section>
     <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
     <footer class="footer">
