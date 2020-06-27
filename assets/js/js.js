@@ -1,16 +1,5 @@
 $(document).ready(function () {
-
-
-
-  var exercise = {
-    pic: "",
-    exercise: [],
-    description: ""
-
-  }
-
-  counter = 0
-
+  
   var select = "";
   console.log(select)
 
@@ -22,16 +11,6 @@ $(document).ready(function () {
     
   });
 
-  // startButton.addEventListener("click", startGame);
-  // //  submitButton.addEventListener("click");
-  // nextButton.addEventListener("click", () => {
-  //     if (currentQuestionIndex === 5) {
-  //         submitButton.classList.remove("hide")
-  //         nextButton.classList.add("hide")
-  //     } else {
-  //         nextQuestion();
-  //         currentQuestionIndex++;
-  //     }
   // Gathering the Name of the exercise and description of muscle 
   function firstCall(id) {
     $(("#card")).removeClass("hide");
@@ -42,24 +21,72 @@ $(document).ready(function () {
       method: "GET"
     }).then(function (response) {
       console.log(response);
-      console.log(response.results[8].description)
+      console.log(response.results[3].description)
 
     //creating setting the responses to variables
 
       var exerciseName = $("#exerciseName");
       var exerciseDescription = $("#exerciseDescription");
 
-      exerciseName.html(response.results[8].name);
-      exerciseDescription.html(response.results[8].description)      
+      exerciseName.html(response.results[3].name);
+      exerciseDescription.html(response.results[3].description);
+      
+      
 
+      
+      for (var i = 0; i < 6; i++) {
 
-      counter++
-      // secondCall()
+        var card = $("<div>").attr("class", "card hide has-text-centered")
+        card.attr("id", "card");
+        card.text("hello");
+        $("selector").attr(attributeName);
+      
+        var exercises = response.results[i];
+        var $exerciseList = $("<ul>");
+        var cardContent = $("#cardContent");
+      // if(response.results[i].license_author == "wger.de")
+      }
+      
+      // //   cardContent.append(
+      // //   "<div class='content has-text-centered'>" +
+      // //     "<div class='title is-4 centerDiv' id='cardContent  +
+      // //     "</span>" +
+      // //     "<strong> " +
+      // //     headline.main +
+      // //     "</strong>"
+      // // );
 
     });
   }
 
-  
+  fetch("https://type.fit/api/quotes")
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      console.log(data);
+      var randomNum = Math.floor(Math.random() * 1643)
+        var quote = (data[randomNum].text)
+        var quoteDiv = $("#quotes")
+        quoteDiv.text(quote);
+      setInterval(function(){
+        var randomNum = Math.floor(Math.random() * 1643)
+        var quote = (data[randomNum].text)
+        var quoteDiv = $("#quotes")
+        quoteDiv.text(quote);
+      }, 5000);
+      
+    });
+
+
+
+
+});
+
+var a
+
+
+
   // Get the image of the exercise
 // function secondCall()
 //   {
@@ -96,29 +123,6 @@ $(document).ready(function () {
 
   // // });
   // }
-
-
-
-
-  fetch("https://type.fit/api/quotes")
-    .then(function (response) {
-      return response.json();
-    })
-    .then(function (data) {
-      console.log(data);
-      var randomNum = Math.floor(Math.random() * 1643)
-      var quote = (data[randomNum].text)
-      var quoteDiv = $("#quotes")
-      quoteDiv.text(quote);
-    });
-
-
-
-
-});
-
-
-
 
 
 

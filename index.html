@@ -11,26 +11,30 @@
 </head>
 
 <body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="./assets/js/js.js"></script>
+
 
   <nav class="navbar" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
       <a class="navbar-item" href="https://bulma.io">
         <!-- <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28"> -->
       </a>
-  
-      <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+
+      <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
+        data-target="navbarBasicExample">
         <span aria-hidden="true"></span>
         <span aria-hidden="true"></span>
         <span aria-hidden="true"></span>
       </a>
     </div>
-  
+
     <div id="navbarBasicExample" class="navbar-menu">
       <div class="navbar-start">
         <a class="navbar-item">
           Home
         </a>
-  
+
         <a class="navbar-item">
           Food Ideas
         </a>
@@ -38,8 +42,7 @@
     </div>
   </nav>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="./assets/js/js.js"></script>
+
 
   <div class="bg-images">
     <section class="section">
@@ -48,14 +51,14 @@
         <div><span id="quotes"></span></div>
       </div>
     </section>
-    <section class="section mainBody">
+    <section class="mainBody">
       <div class="container">
         <h1 class="title has-text-centered promtText">What do you want to work on today?</h1>
         <div class="field columns is-centered">
           <div class="control">
             <div class="select is-success">
               <select id="selector">
-                <option value="0">Select the muscle</option>
+                <option value="0"><strong>Select the muscle</strong></option>
                 <option value="1">Biceps</option>
                 <option value="5">Triceps</option>
                 <option value="4">Pecs</option>
@@ -69,31 +72,30 @@
               </select>
             </div>
           </div>
-            
+
         </div>
         <section id="exercises">
-          <div class="card hide" id="card">
-            <div class="card-content">
-              <div class="media">
-                <div class="content">
-                  <p class="title is-4" id="exerciseName"></p>
-                </div>
+          <div class="card hide has-text-centered" id="card">
+            <div class="card-content" id="cardContent">
+              <div class="content has-text-centered">
+                <div class="title is-4 centerDiv" id="exerciseName"></div>
               </div>
+              <hr>
               <div class="content" id="exerciseDescription">
                 <br>
               </div>
             </div>
           </div>
-        </section>    
+        </section>
       </div>
     </section>
     <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
     <footer class="footer">
-    <div class="content has-text-centered">
-      <p>
-        &copy; Copyright 2020 By Don Tran, Ricardo Manosalvas, and Sidorela Kollcaku
-      </p>
-    </div>
+      <div class="content has-text-centered">
+        <p>
+          &copy; Copyright 2020 By Don Tran, Ricardo Manosalvas, and Sidorela Kollcaku
+        </p>
+      </div>
     </footer>
 
   </div>
