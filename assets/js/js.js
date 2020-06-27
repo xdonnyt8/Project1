@@ -21,18 +21,40 @@ $(document).ready(function () {
       method: "GET"
     }).then(function (response) {
       console.log(response);
-      console.log(response.results[8].description)
+      console.log(response.results[3].description)
 
     //creating setting the responses to variables
 
       var exerciseName = $("#exerciseName");
       var exerciseDescription = $("#exerciseDescription");
 
-      exerciseName.html(response.results[8].name);
-      exerciseDescription.html(response.results[8].description)      
+      exerciseName.html(response.results[3].name);
+      exerciseDescription.html(response.results[3].description);
+      
+      
 
+      
+      for (var i = 0; i < 6; i++) {
 
-      counter++
+        var card = $("<div>").attr("class", "card hide has-text-centered")
+        card.attr("id", "card");
+        card.text("hello");
+        $("selector").attr(attributeName);
+      
+        var exercises = response.results[i];
+        var $exerciseList = $("<ul>");
+        var cardContent = $("#cardContent");
+      // if(response.results[i].license_author == "wger.de")
+      }
+      
+      // //   cardContent.append(
+      // //   "<div class='content has-text-centered'>" +
+      // //     "<div class='title is-4 centerDiv' id='cardContent  +
+      // //     "</span>" +
+      // //     "<strong> " +
+      // //     headline.main +
+      // //     "</strong>"
+      // // );
 
     });
   }
@@ -61,6 +83,7 @@ $(document).ready(function () {
 
 });
 
+var a
 
 
 
