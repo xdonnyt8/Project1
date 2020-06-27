@@ -1,16 +1,5 @@
 $(document).ready(function () {
-
-
-
-  var exercise = {
-    pic: "",
-    exercise: [],
-    description: ""
-
-  }
-
-  counter = 0
-
+  
   var select = "";
   console.log(select)
 
@@ -22,16 +11,6 @@ $(document).ready(function () {
     
   });
 
-  // startButton.addEventListener("click", startGame);
-  // //  submitButton.addEventListener("click");
-  // nextButton.addEventListener("click", () => {
-  //     if (currentQuestionIndex === 5) {
-  //         submitButton.classList.remove("hide")
-  //         nextButton.classList.add("hide")
-  //     } else {
-  //         nextQuestion();
-  //         currentQuestionIndex++;
-  //     }
   // Gathering the Name of the exercise and description of muscle 
   function firstCall(id) {
     $(("#card")).removeClass("hide");
@@ -54,12 +33,37 @@ $(document).ready(function () {
 
 
       counter++
-      // secondCall()
 
     });
   }
 
-  
+  fetch("https://type.fit/api/quotes")
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      console.log(data);
+      var randomNum = Math.floor(Math.random() * 1643)
+        var quote = (data[randomNum].text)
+        var quoteDiv = $("#quotes")
+        quoteDiv.text(quote);
+      setInterval(function(){
+        var randomNum = Math.floor(Math.random() * 1643)
+        var quote = (data[randomNum].text)
+        var quoteDiv = $("#quotes")
+        quoteDiv.text(quote);
+      }, 5000);
+      
+    });
+
+
+
+
+});
+
+
+
+
   // Get the image of the exercise
 // function secondCall()
 //   {
@@ -96,29 +100,6 @@ $(document).ready(function () {
 
   // // });
   // }
-
-
-
-
-  fetch("https://type.fit/api/quotes")
-    .then(function (response) {
-      return response.json();
-    })
-    .then(function (data) {
-      console.log(data);
-      var randomNum = Math.floor(Math.random() * 1643)
-      var quote = (data[randomNum].text)
-      var quoteDiv = $("#quotes")
-      quoteDiv.text(quote);
-    });
-
-
-
-
-});
-
-
-
 
 
 

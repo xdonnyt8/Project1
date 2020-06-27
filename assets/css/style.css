@@ -51,3 +51,7 @@ body {
 #display{
     color: lawngreen;
 }
+
+.centerDiv{
+    text-align: center;
+}
