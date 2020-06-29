@@ -6,7 +6,7 @@ $(document).ready(function () {
   $('#selector').change(function (e) {
     e.preventDefault()
     select = $(this).val()
-    $("#display").empty();
+    $("#cardContent").empty();
     firstCall(select)
 
   });
@@ -21,10 +21,6 @@ $(document).ready(function () {
       method: "GET"
     }).then(function (response) {
       console.log(response);
-      console.log(response.results[3].description)
-
-
- 
 
       for (var i = 0; i < 6; i++) {
         var randomEx = (Math.floor(Math.random() * response.results.length))
@@ -33,35 +29,41 @@ $(document).ready(function () {
         var cardContainer = $("<ul>")
         var titleCard = $("<div class='title is-4'>")
         var titleDesc = $("<div class='content'>")
-
         var exerciseName = response.results[randomEx].name;
         var exerciseDescription = response.results[randomEx].description;
 
-        $(titleCard).append(exerciseName);
-        $(titleDesc).append(exerciseDescription);
+    
+
+        var exercisePop = ["Butterfly Reverse", "Arms",
+        "Awesome","Nuevo Ejercicio", "Dumbbells on Scott Machine",
+        "Curl su Panca a 45°","Bicep Curls","Billexercise","Dumbbell Squat","Leg Curls (sitting)","Fly With Cable",
+        "Free Weight Lats Pulldown","Chin Ups","BenchPress","Bigmarms","my Exercise","Pullup",
+        "Rowing Machine","Sads","shay","Test","Upper Body","Bicep","Bicep Curl Dumbell (Prise Hammer)","bigmarms",]
+
+        if(exerciseName != exercisePop){ 
+          $(titleDesc).append(exerciseDescription);
+          $(titleCard).append(exerciseName);
+
+        }
+
+        
+      
 
         var lineOne = $("<li class='title is-4'>").text(exerciseName);
         cardContainer.append(lineOne)
         var lineTwo = $("<li class='content'>").text(exerciseDescription);
         cardContainer.append(lineTwo)
 
-        console.log(i)
+        console.log(response.results[randomEx])
+        
         $("#cardContent").append(cardContainer);
-
 
       }
 
-      // //   cardContent.append(
-      // //   "<div class='content has-text-centered'>" +
-      // //     "<div class='title is-4 centerDiv' id='cardContent  +
-      // //     "</span>" +
-      // //     "<strong> " +
-      // //     headline.main +
-      // //     "</strong>"
-      // // );
 
     });
   }
+  
 
   fetch("https://type.fit/api/quotes")
     .then(function (response) {
@@ -87,7 +89,6 @@ $(document).ready(function () {
 
 });
 
-var a
 
 
 
