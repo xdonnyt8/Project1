@@ -1,14 +1,14 @@
 $(document).ready(function () {
-  
+
   var select = "";
   console.log(select)
 
   $('#selector').change(function (e) {
     e.preventDefault()
     select = $(this).val()
-    $("#display").empty();
+    $("#cardContent").empty();
     firstCall(select)
-    
+
   });
 
   // Gathering the Name of the exercise and description of muscle 
@@ -21,43 +21,49 @@ $(document).ready(function () {
       method: "GET"
     }).then(function (response) {
       console.log(response);
-      console.log(response.results[3].description)
 
-    //creating setting the responses to variables
-
-      var exerciseName = $("#exerciseName");
-      var exerciseDescription = $("#exerciseDescription");
-
-      exerciseName.html(response.results[3].name);
-      exerciseDescription.html(response.results[3].description);
-      
-      
-
-      
       for (var i = 0; i < 6; i++) {
+        var randomEx = (Math.floor(Math.random() * response.results.length))
 
-        var card = $("<div>").attr("class", "card hide has-text-centered")
-        card.attr("id", "card");
-        card.text("hello");
-        $("selector").attr(attributeName);
+
+        var cardContainer = $("<ul>")
+        var titleCard = $("<div class='title is-4'>")
+        var titleDesc = $("<div class='content'>")
+        var exerciseName = response.results[randomEx].name;
+        var exerciseDescription = response.results[randomEx].description;
+
+    
+
+        var exercisePop = ["Butterfly Reverse", "Arms",
+        "Awesome","Nuevo Ejercicio", "Dumbbells on Scott Machine",
+        "Curl su Panca a 45°","Bicep Curls","Billexercise","Dumbbell Squat","Leg Curls (sitting)","Fly With Cable",
+        "Free Weight Lats Pulldown","Chin Ups","BenchPress","Bigmarms","my Exercise","Pullup",
+        "Rowing Machine","Sads","shay","Test","Upper Body","Bicep","Bicep Curl Dumbell (Prise Hammer)","bigmarms",]
+
+        if(exerciseName != exercisePop){ 
+          $(titleDesc).append(exerciseDescription);
+          $(titleCard).append(exerciseName);
+
+        }
+
+        
       
-        var exercises = response.results[i];
-        var $exerciseList = $("<ul>");
-        var cardContent = $("#cardContent");
-      // if(response.results[i].license_author == "wger.de")
+
+        var lineOne = $("<li class='title is-4'>").text(exerciseName);
+        cardContainer.append(lineOne)
+        var lineTwo = $("<li class='content'>").text(exerciseDescription);
+        cardContainer.append(lineTwo)
+
+        console.log(response.results[randomEx])
+        
+        $("#cardContent").append(cardContainer);
+
       }
-      
-      // //   cardContent.append(
-      // //   "<div class='content has-text-centered'>" +
-      // //     "<div class='title is-4 centerDiv' id='cardContent  +
-      // //     "</span>" +
-      // //     "<strong> " +
-      // //     headline.main +
-      // //     "</strong>"
-      // // );
+
 
     });
   }
+  
 
   fetch("https://type.fit/api/quotes")
     .then(function (response) {
@@ -66,16 +72,16 @@ $(document).ready(function () {
     .then(function (data) {
       console.log(data);
       var randomNum = Math.floor(Math.random() * 1643)
-        var quote = (data[randomNum].text)
-        var quoteDiv = $("#quotes")
-        quoteDiv.text(quote);
-      setInterval(function(){
+      var quote = (data[randomNum].text)
+      var quoteDiv = $("#quotes")
+      quoteDiv.text(quote);
+      setInterval(function () {
         var randomNum = Math.floor(Math.random() * 1643)
         var quote = (data[randomNum].text)
         var quoteDiv = $("#quotes")
         quoteDiv.text(quote);
       }, 5000);
-      
+
     });
 
 
@@ -83,7 +89,6 @@ $(document).ready(function () {
 
 });
 
-var a
 
 
 
@@ -99,7 +104,7 @@ var a
 //       var exerciseName = response.results[3].name;
 //       console.log(exerciseName)
 //       counter++
-   
+
 
 //     });
 //   }
