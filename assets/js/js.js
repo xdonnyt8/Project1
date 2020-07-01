@@ -83,7 +83,7 @@ $(document).ready(function () {
         && exerciseName != "TestBicep" && exerciseName != "Test" && exerciseName != "Swimming" && exerciseName != "Squat Jumps" && exerciseName != "Snatch" && exerciseName != "Shay"
         && exerciseName != "Seatups" && exerciseName != "Sads" && exerciseName != "Run/Walk" && exerciseName != "Run - Interval Training " && exerciseName != "Rowing, Lying on Bench" && exerciseName != "ExerA"
         && exerciseName != "Chin-ups" && exerciseName != "my Exercise" && exerciseName != "Power Clean" && exerciseName != "Free Weight Lats Pulldown" && exerciseName != "Bike Ride" && exerciseName != "Triceps Machine"
-        && exerciseName != "Selectorized Seated Cable Row," && exerciseName != "Shoulder Press, Barbell" && exerciseName != "Perfect Push Up" && exerciseName != "" && exerciseName != "" && exerciseName != ""
+        && exerciseName != "Selectorized Seated Cable Row," && exerciseName != "Shoulder Press, Barbell" && exerciseName != "Perfect Push Up" && exerciseName != "Billexercise" && exerciseName != "" && exerciseName != ""
         && exerciseName != "" && exerciseName != "" && exerciseName != "" && exerciseName != "" && exerciseName != "" && exerciseName != ""
         && exerciseName != "" && exerciseName != "" && exerciseName != "" && exerciseName != "" && exerciseName != "" && exerciseName != ""
         && exerciseName != "" && exerciseName != "" && exerciseName != "" && exerciseName != " " && exerciseName != "" && exerciseName != "";

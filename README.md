@@ -8,7 +8,7 @@ With this app, we are creating an informative platform that when you choose what
 
 ## Mockup
 
-![fitness](templatemockup.png)
+![fitness](FrontPage.png)
 
 
 
