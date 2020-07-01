@@ -3,9 +3,9 @@ $(document).ready(function () {
   currentTime();
 
   function currentTime() {
-      var time = moment().format('MMMM Do YYYY, h:mm:ss a');
-      $("#currentDay").html(time);
-      setTimeout(currentTime, 1000);
+    var time = moment().format('MMMM Do YYYY, h:mm:ss a');
+    $("#currentDay").html(time);
+    setTimeout(currentTime, 1000);
   };
 
 
@@ -93,9 +93,7 @@ $(document).ready(function () {
     }
 
 
-
   }
-
 
 
 
@@ -106,14 +104,27 @@ $(document).ready(function () {
     .then(function (data) {
       console.log(data);
       var randomNum = Math.floor(Math.random() * 1643)
+
       var quote = (data[randomNum].text)
+      var author = (data[randomNum].author)
+      var authorDiv = $("#authors")
+
       var quoteDiv = $("#quotes")
+
       quoteDiv.text(quote);
+      authorDiv.text("-" + author)
+
       setInterval(function () {
+
         var randomNum = Math.floor(Math.random() * 1643)
         var quote = (data[randomNum].text)
+        var author = (data[randomNum].author)
+
+        var authorDiv = $("#authors")
         var quoteDiv = $("#quotes")
-        quoteDiv.text(quote);
+
+        quoteDiv.text('"' + quote+ '"');
+        authorDiv.text("-" + author);
       }, 5000);
 
     });

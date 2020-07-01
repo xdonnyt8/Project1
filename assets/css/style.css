@@ -61,8 +61,6 @@ body {
 }
 
 .centerDiv{
-    text-align: center;
-}
-.select{
-    align-content: center;
+    margin: auto;
+
 }
