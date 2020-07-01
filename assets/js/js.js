@@ -1,5 +1,15 @@
 $(document).ready(function () {
 
+  currentTime();
+
+  function currentTime() {
+      var time = moment().format('MMMM Do YYYY, h:mm:ss a');
+      $("#currentDay").html(time);
+      setTimeout(currentTime, 1000);
+  };
+
+
+
   var select = "";
   console.log(select)
 
@@ -26,49 +36,44 @@ $(document).ready(function () {
       console.log(response);
 
       for (var i = 0; i < 6;) {
-        // var randomEx = (Math.floor(Math.random() * response.results.length))
 
-        var cardContainer = $("<ul>")
+        var cardContainer = $("<ul>") // Create a unordered list element to be appended to the page
 
+        var randomNum = randoSequence(0, (response.results.length - 1));  //returns the var as an array so there won't be repeating numbers
 
-        // var randomNum2 = randomNum(response.results.length)
-        
-    var randomNum2 = rando(0, (response.results.length - 1));
+        var randomNum2 = (Math.floor(Math.random() * response.results.length)) // pick a random integer by the number of exercise
 
-        var exerciseName = response.results[randomNum2].name;
+        var randomEx = randomNum[randomNum2] // set the value of the exercise to equal the number generated in the random array
+
+        var exerciseName = response.results[randomEx].name;
         console.log(exerciseName)
-        var exerciseDescription = response.results[randomNum2].description;
+        var exerciseDescription = response.results[randomEx].description;
 
         const excludeNonsense = nonsense(exerciseName);
         const excludeBlanks = blankNonsense(exerciseDescription)
 
-        if (excludeNonsense && excludeBlanks) {
-         
-          // if (exerciseName != exercisePop.val){
-            i++;
+        if (excludeNonsense && excludeBlanks) { //Condition to check for unwanted exercises 
+
+          i++; // i will increase by one each time the if statement is met so that the for loop can keep looping until 6 exercise are appended
 
           var lineOne = $("<hr><li class='title is-4'>").html(exerciseName);
           cardContainer.append(lineOne)
           var lineTwo = $("<li class='content'>").html(exerciseDescription);
           cardContainer.append(lineTwo)
 
-          console.log(response.results[randomNum2])
+          console.log(response.results[randomEx])
           $("#cardContent").append(cardContainer);
-          
-         
+
+
         }
       }
-
-
-
-
 
     });
 
 
 
 
-    // Variables to exclude from the search
+    // Word bank to exclude these exercise because they return exercises that doesn't make sense
     function nonsense(exerciseName) {
       return exerciseName != "Arms" && exerciseName != "Awesome" && exerciseName != "Nuevo Ejercicio" && exerciseName != "Dumbbells on Scott Machine" && exerciseName != "Bigmarms"
         && exerciseName != "Curl su Panca a 45°" && exerciseName != "Bicep Curls" && exerciseName != "Bicep" && exerciseName != "Bicep Curl Dumbell (Prise Hammer)" && exerciseName != "Chin Ups" && exerciseName != ""
@@ -78,7 +83,7 @@ $(document).ready(function () {
         && exerciseName != "TestBicep" && exerciseName != "Test" && exerciseName != "Swimming" && exerciseName != "Squat Jumps" && exerciseName != "Snatch" && exerciseName != "Shay"
         && exerciseName != "Seatups" && exerciseName != "Sads" && exerciseName != "Run/Walk" && exerciseName != "Run - Interval Training " && exerciseName != "Rowing, Lying on Bench" && exerciseName != "ExerA"
         && exerciseName != "Chin-ups" && exerciseName != "my Exercise" && exerciseName != "Power Clean" && exerciseName != "Free Weight Lats Pulldown" && exerciseName != "Bike Ride" && exerciseName != "Triceps Machine"
-        && exerciseName != "Selectorized Seated Cable Row," && exerciseName != "Shoulder Press, Barbell" && exerciseName != "" && exerciseName != "" && exerciseName != "" && exerciseName != ""
+        && exerciseName != "Selectorized Seated Cable Row," && exerciseName != "Shoulder Press, Barbell" && exerciseName != "Perfect Push Up" && exerciseName != "" && exerciseName != "" && exerciseName != ""
         && exerciseName != "" && exerciseName != "" && exerciseName != "" && exerciseName != "" && exerciseName != "" && exerciseName != ""
         && exerciseName != "" && exerciseName != "" && exerciseName != "" && exerciseName != "" && exerciseName != "" && exerciseName != ""
         && exerciseName != "" && exerciseName != "" && exerciseName != "" && exerciseName != " " && exerciseName != "" && exerciseName != "";
@@ -86,11 +91,7 @@ $(document).ready(function () {
     function blankNonsense(exerciseDescription) {
       return exerciseDescription != "";
     }
-    function randomNum(max) {
 
-      return Math.floor(Math.random() * (max));
-
-    }
 
 
   }
