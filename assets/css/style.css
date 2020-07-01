@@ -1,6 +1,6 @@
 body {
     background-color: white;
-  
+    align-content: center;
 
 }
 
@@ -20,7 +20,12 @@ body {
 }
 
 #quotes {
-    background-color: lightgray;
+    /* background-color: lightgray; */
+
+    opacity: 0.9;
+    font-style: italic;
+    font-size: x-large;
+    color: red;
     border-radius: 10px;
     padding: 5px;
 }
@@ -28,10 +33,17 @@ body {
 
 
 .promtText{
+<<<<<<< HEAD
     color: rgb(236, 221, 216);
+=======
+    background-color: lightgray;
+    opacity: 0.7;
+    color: rgb(230, 98, 59);
+    font-weight: bolder;
+>>>>>>> 2bc6ffddaf106f954b123c5b544d6ba8c58fb3fd
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-style: italic;
-    font:bold;
+    font: bold;
   
 }
 
@@ -54,4 +66,7 @@ body {
 
 .centerDiv{
     text-align: center;
+}
+.select{
+    align-content: center;
 }
