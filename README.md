@@ -13,13 +13,12 @@ With this app, we are creating an informative platform that when you choose what
 
 
 ## List of APIs 
-- YouTube: https://developers.google.com/youtube/v3
 
-*Inspirational Quotes 
+*Inspirational Quotes (https://type.fit/api/quotes)
 
--Exercise Database(still looking): https://wger.de/en/software/api (maybe)
+-https://wger.de/en/software/api
 
--Google Places: https://developers.google.com/places/web-service/intro
+
 
 
 ## TEAM Members
